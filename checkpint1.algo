@@ -1,0 +1,58 @@
+ALGORITHM checkpoint 1 
+VAR
+    c:char;
+ch:string;
+nb_word,nb_vowel:integer;
+
+BEGIN
+    repeat
+writeln("enter à string character by character :");
+readln(c);
+if (c=" ") then
+nb_word+=1;
+if (c in ["a","e","y","u","i","o"]) then
+nb_vowel+=1;
+until (c=".");
+WriteLn(ch);
+WriteLn(nb_word);
+WriteLn (nb_vowel);
+end.
+ALGORITHM chechpoint 2 
+VAR
+   tab1 : INTEGER[9]
+   tab2 : INTEGER[9]
+
+   sum : INTEGER
+
+   test : BOOLEAN
+
+BEGIN
+   tab1 := {3,1,7,9}
+   tab2 := {2,4,1,9,3}
+   sum := 0
+
+   FOR i FROM 0 TO tab1.length-1 DO
+        test := false
+        FOR j from 0 to tab2.length-1 DO
+            IF (tab1[i] == tab2[j]) THEN
+                test := true
+            END_IF
+        END_FOR
+        IF (NOT test) THEN
+            sum := sum + tab1[i]
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO tab2.length-1 DO
+        test := false
+        FOR j from 0 to tab1.length-1 DO
+            IF (tab2[i] == tab1[j]) THEN
+                test := true
+            END_IF
+        END_FOR
+        IF (NOT test) THEN
+            sum := sum + tab2[i]
+        END_IF
+    END_FOR
+END
+
